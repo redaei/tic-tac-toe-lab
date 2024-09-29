@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Mandali|Raleway:900&display=swap');
+
 body {
   background-color: gainsboro;
   /* Use a system font, if none are available use an available sans-sarif */
-  font-family: system-ui, sans-serif;
-  margin: 0;
+  font-family: Mandali, Arial, sans-serif;
+  /* font-size: 10px; */
+  /* font-family: system-ui, sans-serif; */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .board {
@@ -15,6 +23,28 @@ body {
   width: 30%;
   aspect-ratio: 1/1;
   border: 3px solid black;
-  font-size: 64px;
+  font-size: 45px;
   text-align: center;
+  font-weight: bold;
+  /* font-size: 100%; */
+  /* object-fit: cover; */
+}
+
+#reset {
+  margin-top: 30px;
+  background-color: #04aa6d; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+#reset:hover {
+  background-color: #00744a; /* Green */
+}
+
+.sqr:hover {
+  background-color: rgb(173, 173, 173);
 }
