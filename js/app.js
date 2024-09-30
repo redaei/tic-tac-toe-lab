@@ -40,7 +40,17 @@ const updateBoard = () => {
   board.forEach((sqr, index) => {
     squareEls[index].textContent = board[index]
     if (squareEls[index].textContent === 'O') {
-      squareEls[index].style.backgroundColor = 'red' //needs improve
+      squareEls[index].classList.add("selectedO")
+      squareEls[index].classList.add("noHover")
+    } else if (squareEls[index].textContent === 'X') {
+      squareEls[index].classList.add("selectedX") 
+      squareEls[index].classList.add("noHover") 
+    }
+    else {
+      squareEls[index].classList.remove("selectedX") 
+      squareEls[index].classList.remove("selectedO") 
+      squareEls[index].classList.remove("noHover")
+      document.querySelector(".board").classList.remove("noHover")
     }
   })
 }
@@ -49,14 +59,22 @@ const updateMessage = () => {
   // -If both winner and tie have a value of false (meaning the game is still in progress), render whose turn it is.
   if (!winner && !tie) {
     message.innerText = turn
+    message.classList.remove("messageTie")
+    message.classList.remove("messageWinX")
+    message.classList.remove("messageWinO")
   }
   // -If winner is false, but tie is true, render a tie message.
   else if (winner === false && tie === true) {
     message.innerText = 'Tie!'
+    message.classList.add("messageTie")
   }
   // -Otherwise, render a congratulatory message to the player that has won.
   else {
     message.innerText = `Bravo! · ${turn} win!`
+    document.querySelector(".board").classList.add("noHover")
+    if (turn === "X")
+      message.classList.add("messageWinX")
+    else message.classList.add("messageWinO")
   }
 }
 

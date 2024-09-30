@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Mandali|Raleway:900&display=swap');
 
+
 body {
-  background-color: gainsboro;
+  --red-color: #f44336; 
+  --green-color: #04aa6d;
+  --blue-color: #008CBA;
+
+  background-color: #ececec;
   /* Use a system font, if none are available use an available sans-sarif */
   font-family: Mandali, Arial, sans-serif;
   /* font-size: 10px; */
@@ -11,8 +16,37 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
+#message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+}
+#logo {
+  height: 100px;
+  margin-top: 1em;
+}
+h1 {
+  margin-top: -10px;
+  margin-bottom: -5px;
+}
+.messageWinX {
+  background-color: var(--blue-color);
+  color: white;
+}
+.messageWinO {
+  background-color: var(--red-color);
+  color: white;
+}
+.messageTie {
+  background-color: var(--green-color);
+  color: white;
+}
 .board {
   display: flex;
   flex-wrap: wrap;
@@ -26,13 +60,11 @@ body {
   font-size: 45px;
   text-align: center;
   font-weight: bold;
-  /* font-size: 100%; */
-  /* object-fit: cover; */
 }
 
 #reset {
   margin-top: 30px;
-  background-color: #04aa6d; /* Green */
+  background-color: var(--green-color); 
   border: none;
   color: white;
   padding: 15px 32px;
@@ -42,9 +74,27 @@ body {
   font-size: 16px;
 }
 #reset:hover {
-  background-color: #00744a; /* Green */
+  background-color: #00744a;
 }
 
 .sqr:hover {
   background-color: rgb(173, 173, 173);
 }
+
+.selectedO {
+  background-color: var(--red-color);
+  color: white;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.85);
+}
+.selectedX {
+  background-color: var(--blue-color);
+  color: white;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.85);
+}
+
+.noHover{
+  pointer-events: none;
+}
+
+
+
